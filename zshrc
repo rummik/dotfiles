@@ -8,7 +8,7 @@ which htop >/dev/null     && alias top=htop
 which ack-grep >/dev/null && alias ack=ack-grep
 which mosh >/dev/null     && alias mosh='mosh -a'
 
-tailf() { tail -f $1 | while read j; do print -n "\n$j"; done }
+tailf() { tail -f $2 | while read j; do print -n "\n$j"; done }
 
 # For historical purposes
 HISTSIZE=10000
@@ -35,8 +35,8 @@ sprunge
 wakeonlan
 nyan
 
-#git
-#github
+git
+github
 npm
 heroku
 screen
