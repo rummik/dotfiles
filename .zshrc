@@ -35,6 +35,7 @@ antigen theme rummik/zsh-theme
 antigen bundles <<EOBUNDLES
 rummik/zsh-isup
 rummik/zsh-blog
+rummik/zsh-dotty
 
 sprunge
 wakeonlan
@@ -53,5 +54,7 @@ zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 antigen apply
+
+dotty remote rummik/dotfiles
 
 [[ -f ~/.zsh_userrc ]] && . ~/.zsh_userrc
