@@ -1,0 +1,5 @@
+include "%L"   # import the default Compose file for your locale
+<Multi_key> <bar> <b>           : "฿"
+<Multi_key> <b> <bar>           : "฿"
+<Multi_key> <bar> <B>           : "฿"
+<Multi_key> <B> <bar>           : "฿"
