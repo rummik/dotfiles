@@ -2,6 +2,7 @@
 export PATH=$PATH:~/.bin
 export EDITOR=vim
 export BROWSER=$(which google-chrome chromium-browser firefox links2 links lynx | grep -Pm1 '^/')
+export PATH=$PATH:/sbin:/usr/sbin
 
 which links2 >/dev/null   && alias links=links2
 which htop >/dev/null     && alias top=htop
@@ -17,6 +18,10 @@ SAVEHIST=8500
 # Oh My ZSH!
 ZSH_THEME="rummik"
 COMPLETION_WAITING_DOTS="true"
+
+if [[ ! -f ~/.zshenv || -z $(grep DEBIAN_PREVENT_KEYBOARD_CHANGES ~/.zshenv) ]]; then
+	echo "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" >> ~/.zshenv
+fi
 
 # Antigen <3
 [[ ! -d ~/.lib/antigen ]] && \
@@ -40,6 +45,7 @@ github
 npm
 heroku
 screen
+vundle
 
 debian
 
