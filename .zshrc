@@ -29,7 +29,7 @@ fi
 
 . ~/.lib/antigen/antigen.zsh
 
-antigen lib
+antigen use oh-my-zsh
 antigen theme rummik/zsh-theme
 
 antigen bundles <<EOBUNDLES
