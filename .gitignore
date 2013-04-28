@@ -16,3 +16,5 @@
 .*-errors*
 .cache
 .composer
+.pulse*
+.ssh/*.pub
