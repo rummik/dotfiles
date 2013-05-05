@@ -3,6 +3,7 @@ export PATH=$PATH:~/.bin
 export EDITOR=vim
 export BROWSER=$(which google-chrome chromium-browser firefox links2 links lynx | grep -Pm1 '^/')
 export PATH=$PATH:/sbin:/usr/sbin
+export TZ=America/New_York
 
 which links2 >/dev/null   && alias links=links2
 which htop >/dev/null     && alias top=htop
