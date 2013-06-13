@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+which pactl >/dev/null && pactl upload-sample /usr/share/sounds/ubuntu/stereo/bell.ogg bell.ogg
+
 export GTK_IM_MODULE="xim"
 
 # if running bash
