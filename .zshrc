@@ -58,3 +58,5 @@ antigen apply
 dotty remote rummik/dotfiles
 
 [[ -f ~/.zsh_userrc ]] && . ~/.zsh_userrc
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

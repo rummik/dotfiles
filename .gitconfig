@@ -3,3 +3,7 @@
 	email = r@9k1.us
 [push]
 	default = current
+[gui]
+	editor = gedit
+[cola]
+	tabwidth = 8
