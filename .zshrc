@@ -12,6 +12,7 @@ which mosh >/dev/null     && alias mosh='mosh -a'
 
 tailf() { tail -f $2 | while read j; do print -n "\n$j"; done }
 
+
 # For historical purposes
 HISTSIZE=10000
 SAVEHIST=8500
@@ -39,22 +40,24 @@ rummik/zsh-blog
 rummik/zsh-dotty
 
 sprunge
-wakeonlan
-nyan
+#wakeonlan
+#nyan
 
-git
-github
-npm
-heroku
+#git
+#github
+#npm
+#heroku
 screen
-vundle
+#vundle
 
-debian
+#debian
 
 zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 antigen apply
+
+setopt nocorrectall
 
 dotty remote rummik/dotfiles
 
