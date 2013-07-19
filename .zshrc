@@ -3,6 +3,7 @@ export PATH=$PATH:~/.bin
 export EDITOR=vim
 export BROWSER=$(which google-chrome chromium-browser firefox links2 links lynx | grep -Pm1 '^/')
 export PATH=$PATH:/sbin:/usr/sbin
+export TZ=America/New_York
 
 which links2 >/dev/null   && alias links=links2
 which htop >/dev/null     && alias top=htop
@@ -10,6 +11,7 @@ which ack-grep >/dev/null && alias ack=ack-grep
 which mosh >/dev/null     && alias mosh='mosh -a'
 
 tailf() { tail -f $2 | while read j; do print -n "\n$j"; done }
+
 
 # For historical purposes
 HISTSIZE=10000
@@ -38,22 +40,24 @@ rummik/zsh-blog
 rummik/zsh-dotty
 
 sprunge
-wakeonlan
-nyan
+#wakeonlan
+#nyan
 
-git
-github
-npm
-heroku
+#git
+#github
+#npm
+#heroku
 screen
-vundle
+#vundle
 
-debian
+#debian
 
 zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 antigen apply
+
+setopt nocorrectall
 
 dotty remote rummik/dotfiles
 
