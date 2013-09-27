@@ -50,6 +50,9 @@ set autoindent
 set smartindent
 set nocindent
 
+" Use .vimrc_local.vim instead of _vimrc_local.vim
+let g:local_vimrc = '.vimrc_local.vim'
+
 " Line numbers
 set number
 

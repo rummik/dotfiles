@@ -38,13 +38,14 @@ antigen bundles <<EOBUNDLES
 rummik/zsh-isup
 rummik/zsh-blog
 rummik/zsh-dotty
+rummik/zsh-adminer
 
 sprunge
 #wakeonlan
 #nyan
 
 #git
-#github
+github
 #npm
 #heroku
 screen
@@ -64,3 +65,6 @@ dotty remote rummik/dotfiles
 [[ -f ~/.zsh_userrc ]] && . ~/.zsh_userrc
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
