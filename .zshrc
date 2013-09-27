@@ -39,6 +39,7 @@ rummik/zsh-isup
 rummik/zsh-blog
 rummik/zsh-dotty
 rummik/zsh-adminer
+rummik/zsh-psmin
 
 sprunge
 #wakeonlan
