@@ -58,3 +58,15 @@
 .thumbnails
 .thunderbird
 .irssi
+.Xauthority*
+.ansible*
+.apport*
+.bash*
+.dmrc
+.fonts
+.java
+.minecraft
+.steam*
+.travis
+.tugboat
+.zsh-*

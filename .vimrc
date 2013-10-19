@@ -50,11 +50,17 @@ set autoindent
 set smartindent
 set nocindent
 
+set smarttab
+
 " Use .vimrc_local.vim instead of _vimrc_local.vim
 let g:local_vimrc = '.vimrc_local.vim'
 
 " Line numbers
 set number
+
+" Highlight certain columns
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+set colorcolumn=80,100,120
 
 " PHP
 let php_sql_query          = 1
