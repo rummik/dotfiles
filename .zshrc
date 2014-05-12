@@ -1,17 +1,57 @@
 # Ayup
-export PATH=$PATH:~/.bin
 export EDITOR=vim
 export BROWSER=$(which google-chrome chromium-browser firefox links2 links lynx | grep -Pm1 '^/')
-export PATH=$PATH:/sbin:/usr/sbin
 export TZ=America/New_York
+export GPG_TTY=`tty`
 
+# Yes, really
+export PATH=$PATH:~/.bin
+export PATH=$PATH:/sbin:/usr/sbin
+
+# Constantly needing this
+autoload -U zcalc
+
+# Aliases
 which links2 >/dev/null   && alias links=links2
 which htop >/dev/null     && alias top=htop
 which ack-grep >/dev/null && alias ack=ack-grep
 which mosh >/dev/null     && alias mosh='mosh -a'
 
-tailf() { tail -f $2 | while read j; do print -n "\n$j"; done }
+alias info='info --vi-keys'
 
+# Useful things
+alias dokku='ssh -t dokku@app.9k1.us'
+alias drop-caches='echo 3 | sudo tee /proc/sys/vm/drop_caches'
+
+tailf() { tail -f $2 | while read j; do print -n "\n$j"; done }
+mkcd() { mkdir -p $@; cd $_ }
+
+ing() {
+	local host=$1
+	ping $1 | while read line; do
+		[[ $line -pcre-match 'time=(\d+\.?\d* ms)' ]] &&
+			print -n "\n$host: $MATCH[1]" #"\n$1: $(grep -Po '\d+\.?\d* ms' <<< $j)"
+	done
+}
+
+# Bleck.  These shouldn't be at the end of the file.
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH=/usr/local/heroku/bin:$PATH
+[[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
+
+# Autocompletion for various things
+which grunt >/dev/null    && eval "$(grunt --completion=zsh)"
+
+# default bindings for zsh-users/zsh-history-substring-search
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # For historical purposes
 HISTSIZE=10000
@@ -21,12 +61,11 @@ SAVEHIST=8500
 ZSH_THEME="rummik"
 COMPLETION_WAITING_DOTS="true"
 
-if [[ ! -f ~/.zshenv || -z $(grep DEBIAN_PREVENT_KEYBOARD_CHANGES ~/.zshenv) ]]; then
-	echo "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" >> ~/.zshenv
-fi
+[[ ! -f ~/.zshenv || -z $(grep DEBIAN_PREVENT_KEYBOARD_CHANGES ~/.zshenv) ]] &&
+	print "DEBIAN_PREVENT_KEYBOARD_CHANGES=yes" >> ~/.zshenv
 
 # Antigen <3
-[[ ! -d ~/.lib/antigen ]] && \
+[[ ! -d ~/.lib/antigen ]] &&
 	mkdir -p ~/.lib && git clone https://github.com/zsh-users/antigen.git ~/.lib/antigen
 
 . ~/.lib/antigen/antigen.zsh
@@ -40,22 +79,26 @@ rummik/zsh-blog
 rummik/zsh-dotty
 rummik/zsh-adminer
 rummik/zsh-psmin
+rummik/zsh-stt
+rummik/zsh-pyhttp
+rummik/patpat
 rummik/9k1.us
 
-sprunge
+#sprunge
 #wakeonlan
 #nyan
 
 #git
-github
+#github
 #npm
 #heroku
-screen
+#screen
 #vundle
 
 #debian
 
 zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
 EOBUNDLES
 
 antigen apply
@@ -64,12 +107,5 @@ setopt nocorrectall
 
 dotty remote rummik/dotfiles
 
+# Source user's zshrc
 [[ -f ~/.zsh_userrc ]] && . ~/.zsh_userrc
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# added by travis gem
-source /home/rummik/.travis/travis.sh

@@ -7,3 +7,5 @@
 	editor = gedit
 [cola]
 	tabwidth = 8
+[core]
+	excludesfile = /home/rummik/.gitignore_global
