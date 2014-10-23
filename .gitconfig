@@ -4,8 +4,13 @@
 [push]
 	default = current
 [gui]
-	editor = gedit
+	editor = gvim
 [cola]
 	tabwidth = 8
 [core]
 	excludesfile = /home/rummik/.gitignore_global
+[alias]
+	lg = log --graph --all
+	stash-rebase = "!git stash; git rebase; git stash pop"
+[log]
+	decorate = true
