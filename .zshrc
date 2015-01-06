@@ -109,3 +109,6 @@ dotty remote rummik/dotfiles
 
 # Source user's zshrc
 [[ -f ~/.zsh_userrc ]] && . ~/.zsh_userrc
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

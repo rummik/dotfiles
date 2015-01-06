@@ -53,19 +53,48 @@ set nobackup
 set directory=~/.vim/tmp
 
 
-" Pathogen
-execute pathogen#infect()
-
-
 " Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'briancollins/vim-jst'
-Bundle 'wavded/vim-stylus'
-Bundle 'editorconfig/editorconfig-vim'
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'briancollins/vim-jst'
+Plugin 'claco/jasmine.vim'
+Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'burnettk/vim-angular'
+Plugin 'rummik/vim-ng-snippets'
+
+Plugin 'wavded/vim-stylus'
+
+Plugin 'emgram769/vim-multiuser'
+
+call vundle#end()
+
+
+" CoVim
+let CoVim_default_name = "rummik"
+let CoVim_default_port = "54321"  
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
 
 
 " Indent options
