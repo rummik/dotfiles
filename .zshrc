@@ -20,7 +20,6 @@ which mosh >/dev/null     && alias mosh='mosh -a'
 alias info='info --vi-keys'
 
 # Useful things
-alias dokku='ssh -t dokku@app.9k1.us'
 alias drop-caches='echo 3 | sudo tee /proc/sys/vm/drop_caches'
 
 tailf() { tail -f $2 | while read j; do print -n "\n$j"; done }
@@ -75,12 +74,14 @@ antigen theme rummik/zsh-theme
 
 antigen bundles <<EOBUNDLES
 rummik/zsh-isup
-rummik/zsh-blog
+#rummik/zsh-blog
 rummik/zsh-dotty
 rummik/zsh-adminer
+rummik/zsh-unrpm
 rummik/zsh-psmin
 rummik/zsh-stt
 rummik/zsh-pyhttp
+rummik/zsh-dokku
 rummik/patpat
 rummik/9k1.us
 

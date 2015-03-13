@@ -81,7 +81,9 @@ Plugin 'rummik/vim-ng-snippets'
 
 Plugin 'wavded/vim-stylus'
 
-Plugin 'emgram769/vim-multiuser'
+"Plugin 'emgram769/vim-multiuser'
+
+Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 
